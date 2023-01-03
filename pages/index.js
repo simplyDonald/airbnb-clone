@@ -23,6 +23,7 @@ export default function Home({ exploreData}) {
         <section className='pt-6'>
           <h2 className=" text-4xl font-semibold pb-5">Explore nearby</h2>
           {/* map data gottrn from server - API endpoint below */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
           {exploreData?.map((item) => (
             <SmallCard key={item.img}
               img={item.img}
@@ -30,6 +31,8 @@ export default function Home({ exploreData}) {
               location={item.location}
             />
           ))}
+
+          </div>
         </section>
       </main>
     </>
