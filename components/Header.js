@@ -20,7 +20,7 @@ function Header() {
       </div>
 
       <div className="flex space-x-3 items-center justify-end text-gray-500">
-        <p className="">
+        <p className="hidden md:inline-flex cursor-pointer">
           Become a host
         </p>
         <GlobeAltIcon className="h-6 cursor-pointer" />
