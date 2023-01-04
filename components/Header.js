@@ -8,7 +8,7 @@ import { DateRangePicker } from 'react-date-range';
 import { useRouter } from "next/router";
 
 
-function Header() {
+function Header({placeholder}) {
   // track search input for location
   const [searchInput, setSearchInput] = useState("");
   // track date range picker
@@ -60,7 +60,7 @@ function Header() {
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
         <input value={searchInput} onChange={(e)=> setSearchInput(e.target.value)} 
         className=" flex-grow bg-transparent outline-none pl-5 text-sm text-gray-600 placeholder-gray-400 " type="text" 
-        placeholder="Start your search" />
+        placeholder={placeholder || "Start your search"} />
 
         <MagnifyingGlassIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
       </div>
