@@ -27,7 +27,7 @@ function Map({ searchResults }) {
 
   return (
     <ReactMapGL
-      mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr`"
+      mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr"
       mapboxAccessToken={process.env.mapbox_key}
       {...viewport}
       // make the map view change and scrollable
