@@ -5,22 +5,29 @@ import { getCenter } from 'geolib';
 
 
 function Map({ searchResults }) {
-  const [viewport, setViewport] = useState({
-    width: '100%',
-    height: '100%',
-    latitude: 37.7577,
-    zoom: 11                                               
+ 
 
-  })
-
-  // transform the search results object into the {latitude: 52.516272, longitude: 13.377722} object
+  // transform the search results object into the geolib required array of lat,long object
   const coordinates = searchResults.map(result => ({
     longitude: result.long,
     latitude: result.lat
   }))
+
+  // get the center of the coordinates
+  const center = getCenter(coordinates)
+
+  const [viewport, setViewport] = useState({
+    width: '100%',
+    height: '100%',
+    latitude: center.latitude,
+    longitude: center.longitude,
+    zoom: 11                                               
+
+  })
+
   return (
     <ReactMapGL
-      mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr"
+      mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr`"
       mapboxAccessToken={process.env.mapbox_key}
       {...viewport}
       // make the map view change and scrollable
