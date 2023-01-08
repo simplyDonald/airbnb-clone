@@ -62,7 +62,6 @@ function Map({ searchResults }) {
                 closeOnClick={false}
                 latitude={result.lat}
                 longitude={result.long}
-                className=" p-2"
               >
                 <div className="w-40 h-40">
                   <Image src={result.img} alt={result.title} fill className='rounded-md'  />
