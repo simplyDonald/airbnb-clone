@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import SmallCard from '../components/SmallCard'
 import MediumCard from '../components/MediumCard'
 import LargeCard from '../components/LargeCard'
 import Footer from '../components/Footer'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
