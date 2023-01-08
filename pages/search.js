@@ -15,7 +15,6 @@ function Search({searchResults}) {
   const range = `${formattedStartDate} - ${formattedEndDate}`
 
 
-  console.log(searchResults);
 
   return (
     <div className=" overflow-x-hidden">
