@@ -13,12 +13,18 @@
 }
 
 
-
+/* style the popup close button */
 .mapboxgl-popup-close-button {
-  padding-right: 5px;
+  padding: 10px;
   font-size: 20px;
-  }
-
+  font-weight: 600;
+  background-color: white;
+  margin-bottom: 10px;
+  /* border: 19px solid #FD5B61; */
+  /* border-radius: 9999px; */
+  color:red;
+}
+        
 
 
 

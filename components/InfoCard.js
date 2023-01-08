@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image"
-import { HeartIcon, StarIcon } from '@heroicons/react/24/solid'
+  import { HeartIcon, StarIcon } from '@heroicons/react/24/solid'
 
 function InfoCard({img, location, title, description, star, price, total}) {
   return (

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 // func to get the center of multiple lat and long points to be given to the map
 import { getCenter } from 'geolib';
+import Image from 'next/image';
+import {StarIcon } from '@heroicons/react/24/solid'
 
 
 function Map({ searchResults }) {
@@ -60,9 +62,21 @@ function Map({ searchResults }) {
                 closeOnClick={false}
                 latitude={result.lat}
                 longitude={result.long}
-                className=" text-green-500 px-2"
+                className=" p-2"
               >
-                {result.title}
+                <div className="w-40 h-40">
+                  <Image src={result.img} alt={result.title} fill  />
+                  <div className="text-xs text-white font-bold absolute bottom-[20px] ml-10 p-5 bg-red-500 whitespace-nowrap hover:opacity-20 transition duration-200 ease-out hover:scale-90">
+                    <h3 className=' font-extrabold'>{result.title}</h3>
+                    <div className='flex justify-between font-extralight'>
+                      <p className=' font-bold'>{result.price}</p>
+                      <p className='flex items-center'><StarIcon className=' h-3 text-white'/>{result.star}</p>
+                    </div>
+
+                  </div>
+                    
+                </div>
+                
               </Popup>
             ) : (false) }
           
