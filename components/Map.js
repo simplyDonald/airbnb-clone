@@ -65,8 +65,8 @@ function Map({ searchResults }) {
                 className=" p-2"
               >
                 <div className="w-40 h-40">
-                  <Image src={result.img} alt={result.title} fill  />
-                  <div className="text-xs text-white font-bold absolute bottom-[20px] ml-10 p-5 bg-red-500 whitespace-nowrap hover:opacity-20 transition duration-200 ease-out hover:scale-90">
+                  <Image src={result.img} alt={result.title} fill className='rounded-md'  />
+                  <div className="text-xs text-white font-bold absolute bottom-[20px] ml-10 p-5 bg-red-500 whitespace-nowrap hover:opacity-20 transition duration-200 ease-out hover:scale-90 rounded-md">
                     <h3 className=' font-extrabold'>{result.title}</h3>
                     <div className='flex justify-between font-extralight'>
                       <p className=' font-bold'>{result.price}</p>
