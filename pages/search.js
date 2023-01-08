@@ -18,7 +18,7 @@ function Search({searchResults}) {
   console.log(searchResults);
 
   return (
-    <div>
+    <div className=" overflow-x-hidden">
       <Header placeholder={`${location} | ${range} | ${noOfGuests} ${noOfGuests > 1 ? `guests` : `guest`}`} />
       <main className="flex ">
         <section className="flex-grow pt-14 px-6">

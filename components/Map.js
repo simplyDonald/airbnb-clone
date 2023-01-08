@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 // func to get the center of multiple lat and long points to be given to the map
 import { getCenter } from 'geolib';
 
 
 function Map({ searchResults }) {
+  // state to keep track of the selected location
+  const [selectedLocation, setSelectedLocation] = useState({})
  
 
   // transform the search results object into the geolib required array of lat,long object
@@ -12,7 +14,6 @@ function Map({ searchResults }) {
     longitude: result.long,
     latitude: result.lat
   }))
-
   // get the center of the coordinates
   const center = getCenter(coordinates)
 
@@ -26,14 +27,32 @@ function Map({ searchResults }) {
   })
 
   return (
-    <ReactMapGL
-      mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr"
+    <ReactMapGL mapStyle="mapbox://styles/simplydonald/clcjjzx7m003a15n081bs6xtr"
       mapboxAccessToken={process.env.mapbox_key}
       {...viewport}
       // make the map view change and scrollable
       onMove={evt => setViewport(evt.viewport)}                                                 
     >
+      {searchResults.map(result => (
+        <div key={result.longitude}>
+          <Marker
+            longitude={result.long}
+            latitude={result.lat}
+            offsetLeft={-20}
+            offsetTop={-10}
+            anchor="bottom"
+            
+          >
+            <p
+              role="img"
+              onClick={() => setSelectedLocation(result)}
+              className='cursor-pointer text-2xl animate-bounce'>
+              📌
+            </p>
 
+          </Marker>
+        </div>
+      ))}
     </ReactMapGL>
   )
 }
