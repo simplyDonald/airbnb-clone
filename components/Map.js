@@ -48,9 +48,10 @@ function Map({ searchResults }) {
           >
             <p
               onClick={() => setSelectedLocation(result)}
-              className='cursor-pointer text-2xl animate-bounce'
+              className='cursor-pointer font-bold text-sm text-black bg-slate-400  rounded-full px-2 py-1 hover:animate-bounce hover:shadow-md hover:bg-slate-300 hover:text-black'
               >
-              📌
+                {/* grab number from string using regex */}
+              {`$${result.price.match(/\d+/g)} CAD`}
             </p>
 
           </Marker>
