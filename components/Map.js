@@ -3,7 +3,7 @@ import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 // func to get the center of multiple lat and long points to be given to the map
 import { getCenter } from 'geolib';
 import Image from 'next/image';
-import {StarIcon } from '@heroicons/react/24/solid'
+import {StarIcon, XMarkIcon } from '@heroicons/react/24/solid'
 
 
 function Map({ searchResults }) {
@@ -66,6 +66,9 @@ function Map({ searchResults }) {
               >
                 <div className="w-40 h-40">
                   <Image src={result.img} alt={result.title} fill className='rounded-md'  />
+                  < XMarkIcon className="absolute top-1 right-1 h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer"
+                    onClick={() => setSelectedLocation({})}/>
+                  
                   <div className="text-xs text-white font-bold absolute bottom-[20px] ml-10 p-5 bg-red-500 whitespace-nowrap hover:opacity-20 transition duration-200 ease-out hover:scale-90 rounded-md">
                     <h3 className=' font-extrabold'>{result.title}</h3>
                     <div className='flex justify-between font-extralight'>
