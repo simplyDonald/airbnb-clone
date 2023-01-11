@@ -65,7 +65,9 @@ function Map({ searchResults }) {
                 longitude={result.long}
               >
                 <div className="w-40 h-40">
-                  <Image src={result.img} alt={result.title} fill className='rounded-md'  />
+                  <Image src={result.img} alt={result.title} fill className='rounded-md'
+                    style={{objectFit:"cover"}}
+                  />
                   < XMarkIcon className="absolute top-1 right-1 h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer"
                     onClick={() => setSelectedLocation({})}/>
                   
