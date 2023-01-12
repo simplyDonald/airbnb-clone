@@ -34,7 +34,7 @@ function Map({ searchResults }) {
       mapboxAccessToken={process.env.mapbox_key}
       {...viewport}
       // make the map view change and scrollable
-      onMove={evt => setViewport(evt.viewport)}                                                 
+      onMove={evt => setViewport(evt.viewport)}     
     >
       {searchResults.map(result => (
         <div key={result.img}>
@@ -44,7 +44,6 @@ function Map({ searchResults }) {
             offsetLeft={-20}
             offsetTop={-10}
             anchor="bottom"
-            
           >
             <p
               onClick={() => setSelectedLocation(result)}
@@ -68,7 +67,7 @@ function Map({ searchResults }) {
                   <Image src={result.img} alt={result.title} fill className='rounded-md'
                     style={{objectFit:"cover"}}
                   />
-                  < XMarkIcon className="absolute top-1 right-1 h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer"
+                  < XMarkIcon className="absolute top-1 right-1 h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer active:scale-95 hover:shadow-md transition duration-200 ease-out"
                     onClick={() => setSelectedLocation({})}/>
                   
                   <div className="text-xs text-white font-bold absolute bottom-[20px] ml-10 p-5 bg-red-500 whitespace-nowrap hover:opacity-20 transition duration-200 ease-out hover:scale-90 rounded-md">
