@@ -27,8 +27,8 @@ function InfoCard({img, location, title, description, star, price, total}) {
           </p>
 
           <div>
-            <p className='tetx-lg font-semibold pb-2 lg:text-2xl'>{price}</p>
-            <p className='text-right font-extralight'>{total}</p>
+            <p className='tetx-lg font-semibold pb-2 lg:text-2xl'>{`$${price.match(/\d+/g)} CAD/night`}</p>
+            <p className='text-right font-extralight'>{`$${total.match(/\d+/g)} total`}</p>
           </div>
         </div>
 
